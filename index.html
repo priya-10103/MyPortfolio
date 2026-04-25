@@ -3,61 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Priya | Portfolio</title>
+<title>Priya | Developer</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: #0f172a;
     color: white;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 50px;
-    background: #020617;
+    padding: 20px 60px;
+    background: rgba(0,0,0,0.6);
 }
-nav h2 {
-    color: #38bdf8;
-}
+nav h2 { color: #38bdf8; }
 nav a {
     color: white;
+    margin: 0 15px;
     text-decoration: none;
-    margin: 0 10px;
 }
 
 /* HERO */
 .hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 80px 20px;
+    flex-direction: column;
 }
 .hero h1 {
-    font-size: 40px;
+    font-size: 50px;
 }
 .hero span {
     color: #38bdf8;
 }
-.hero button {
+.hero p {
+    color: #cbd5f5;
+}
+.btn {
     padding: 10px 20px;
     background: #38bdf8;
-    border: none;
     border-radius: 5px;
-    cursor: pointer;
+    margin-top: 20px;
+    border: none;
 }
 
 /* SECTION */
 .section {
-    padding: 40px;
+    padding: 60px;
     text-align: center;
+}
+.grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .card {
     background: #1e293b;
-    margin: 20px auto;
     padding: 20px;
-    width: 80%;
+    width: 250px;
     border-radius: 10px;
 }
 
@@ -82,37 +95,41 @@ footer {
 </nav>
 
 <div class="hero">
-    <h1>Hi, I'm <span>Priya</span> 👋</h1>
-    <p>DevOps Learner | Web Developer</p>
-    <button onclick="scrollToSection()">View Work</button>
+    <h1>Hi, I'm <span>Priya</span></h1>
+    <p>DevOps & Web Developer</p>
+    <button class="btn" onclick="scrollToProjects()">View Projects</button>
 </div>
 
 <div class="section" id="about">
     <h2>About Me</h2>
-    <div class="card">
-        <p>I am learning DevOps and building real-time projects using Jenkins, GitHub, and Web Technologies.</p>
-    </div>
+    <p>I build modern websites and CI/CD pipelines using Jenkins & GitHub.</p>
 </div>
 
 <div class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-        <h3>CI/CD Project</h3>
-        <p>Automated deployment using Jenkins + GitHub</p>
-    </div>
-    <div class="card">
-        <h3>Student Utility App</h3>
-        <p>To-Do, Notes, Calculator built using JS</p>
+    <h2>My Projects</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>CI/CD Pipeline</h3>
+            <p>Automated deployment using Jenkins</p>
+        </div>
+        <div class="card">
+            <h3>Utility App</h3>
+            <p>To-Do + Calculator + Notes</p>
+        </div>
+        <div class="card">
+            <h3>Portfolio</h3>
+            <p>Personal website hosted on GitHub</p>
+        </div>
     </div>
 </div>
 
 <footer>
-    <p>© 2026 Priya | Built with ❤️</p>
+    <p>© 2026 Priya</p>
 </footer>
 
 <script>
-function scrollToSection(){
-    document.getElementById("projects").scrollIntoView({behavior:'smooth'});
+function scrollToProjects(){
+    document.getElementById("projects").scrollIntoView({behavior:"smooth"});
 }
 </script>
 
