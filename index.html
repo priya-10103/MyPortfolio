@@ -3,134 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Priya | Developer</title>
+<title>Portfolio</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #0f172a;
-    color: white;
-}
-
-/* NAV */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 60px;
-    background: rgba(0,0,0,0.6);
-}
-nav h2 { color: #38bdf8; }
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 /* HERO */
 .hero {
-    height: 90vh;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    flex-direction: column;
 }
+
 .hero h1 {
     font-size: 50px;
+    font-weight: bold;
 }
-.hero span {
-    color: #38bdf8;
-}
+
 .hero p {
-    color: #cbd5f5;
-}
-.btn {
-    padding: 10px 20px;
-    background: #38bdf8;
-    border-radius: 5px;
-    margin-top: 20px;
-    border: none;
+    font-size: 20px;
+    opacity: 0.9;
 }
 
 /* SECTION */
 .section {
-    padding: 60px;
-    text-align: center;
-}
-.grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.card {
-    background: #1e293b;
-    padding: 20px;
-    width: 250px;
-    border-radius: 10px;
+    padding: 80px 0;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #020617;
+/* CARD HOVER */
+.card:hover {
+    transform: translateY(-10px);
+    transition: 0.3s;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-    <h2>Priya</h2>
-    <div>
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-    </div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Portfolio</a>
+  </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-    <h1>Hi, I'm <span>Priya</span></h1>
-    <p>DevOps & Web Developer</p>
-    <button class="btn" onclick="scrollToProjects()">View Projects</button>
-</div>
-
-<div class="section" id="about">
-    <h2>About Me</h2>
-    <p>I build modern websites and CI/CD pipelines using Jenkins & GitHub.</p>
-</div>
-
-<div class="section" id="projects">
-    <h2>My Projects</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>CI/CD Pipeline</h3>
-            <p>Automated deployment using Jenkins</p>
-        </div>
-        <div class="card">
-            <h3>Utility App</h3>
-            <p>To-Do + Calculator + Notes</p>
-        </div>
-        <div class="card">
-            <h3>Portfolio</h3>
-            <p>Personal website hosted on GitHub</p>
-        </div>
+    <div>
+        <h1 id="typing"></h1>
+        <p>DevOps Engineer | Web Developer</p>
+        <a href="#projects" class="btn btn-light mt-3">View Projects</a>
     </div>
 </div>
 
-<footer>
-    <p>© 2026 Priya</p>
+<!-- ABOUT -->
+<div class="container section text-center">
+    <h2>About Me</h2>
+    <p>I build real-world projects using Jenkins, GitHub, and modern web technologies.</p>
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" class="container section text-center">
+    <h2>Projects</h2>
+    <div class="row mt-4">
+
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h5>CI/CD Pipeline</h5>
+                <p>Automated deployment using Jenkins & GitHub.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h5>Student Utility App</h5>
+                <p>Includes To-Do, Calculator and Notes.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow p-3">
+                <h5>Portfolio Website</h5>
+                <p>Hosted live using GitHub Pages.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div class="container section text-center">
+    <h2>Contact</h2>
+    <p>Email: yourmail@email.com</p>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center p-3">
+    © 2026 Portfolio
 </footer>
 
+<!-- TYPING EFFECT -->
 <script>
-function scrollToProjects(){
-    document.getElementById("projects").scrollIntoView({behavior:"smooth"});
+let text = "Welcome to My Portfolio";
+let i = 0;
+function typing(){
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 80);
+    }
 }
+typing();
 </script>
 
 </body>
