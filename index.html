@@ -1,93 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student Utility App</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f0f0f0;
-            text-align: center;
-        }
-        h1 {
-            background: #333;
-            color: white;
-            padding: 15px;
-        }
-        .box {
-            background: white;
-            margin: 20px auto;
-            padding: 20px;
-            width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px gray;
-        }
-        input, button {
-            padding: 10px;
-            margin: 5px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            background: #eee;
-            margin: 5px;
-            padding: 5px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priya | Portfolio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: #020617;
+}
+nav h2 {
+    color: #38bdf8;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+.hero h1 {
+    font-size: 40px;
+}
+.hero span {
+    color: #38bdf8;
+}
+.hero button {
+    padding: 10px 20px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* SECTION */
+.section {
+    padding: 40px;
+    text-align: center;
+}
+.card {
+    background: #1e293b;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+}
+</style>
 </head>
 
 <body>
 
-<h1>Student Utility App 🚀</h1>
+<nav>
+    <h2>Priya</h2>
+    <div>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+    </div>
+</nav>
 
-<div class="box">
-    <h3>To-Do List</h3>
-    <input type="text" id="task">
-    <button onclick="addTask()">Add</button>
-    <ul id="list"></ul>
+<div class="hero">
+    <h1>Hi, I'm <span>Priya</span> 👋</h1>
+    <p>DevOps Learner | Web Developer</p>
+    <button onclick="scrollToSection()">View Work</button>
 </div>
 
-<div class="box">
-    <h3>Calculator</h3>
-    <input type="number" id="num1">
-    <input type="number" id="num2"><br>
-    <button onclick="calc('+')">+</button>
-    <button onclick="calc('-')">-</button>
-    <button onclick="calc('*')">*</button>
-    <button onclick="calc('/')">/</button>
-    <p id="result"></p>
+<div class="section" id="about">
+    <h2>About Me</h2>
+    <div class="card">
+        <p>I am learning DevOps and building real-time projects using Jenkins, GitHub, and Web Technologies.</p>
+    </div>
 </div>
 
-<div class="box">
-    <h3>Notes</h3>
-    <textarea id="note"></textarea><br>
-    <button onclick="saveNote()">Save</button>
-    <p id="saved"></p>
+<div class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+        <h3>CI/CD Project</h3>
+        <p>Automated deployment using Jenkins + GitHub</p>
+    </div>
+    <div class="card">
+        <h3>Student Utility App</h3>
+        <p>To-Do, Notes, Calculator built using JS</p>
+    </div>
 </div>
+
+<footer>
+    <p>© 2026 Priya | Built with ❤️</p>
+</footer>
 
 <script>
-function addTask() {
-    let task = document.getElementById("task").value;
-    let li = document.createElement("li");
-    li.innerText = task;
-    document.getElementById("list").appendChild(li);
-}
-
-function calc(op) {
-    let a = Number(document.getElementById("num1").value);
-    let b = Number(document.getElementById("num2").value);
-    let res;
-    if(op=='+') res = a+b;
-    if(op=='-') res = a-b;
-    if(op=='*') res = a*b;
-    if(op=='/') res = a/b;
-    document.getElementById("result").innerText = "Result: " + res;
-}
-
-function saveNote() {
-    let note = document.getElementById("note").value;
-    document.getElementById("saved").innerText = "Saved: " + note;
+function scrollToSection(){
+    document.getElementById("projects").scrollIntoView({behavior:'smooth'});
 }
 </script>
 
