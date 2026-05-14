@@ -142,6 +142,7 @@ void main() {
 }
 
 ex 7 EXPLORE DIFFERENT COMMUNICATION METHOD WITH IOT DEVICES (BLUETOOTH)
+
 Program : 
 #include <SoftwareSerial.h> 
 #define LED_pin 13 
@@ -150,13 +151,6 @@ float data = 25.98;
 char charArray[10]; 
 void setup() { 
 Serial.begin(9600);         // Initialize the Serial Monitor 
- 
-EX NO : 
-DATE   : 
- 
-EXPLORE DIFFERENT COMMUNICATION 
-METHOD WITH IOT DEVICES (BLUETOOTH) 
- 
 bluetooth.begin(9600);      // Initialize Bluetooth communication 
 pinMode(LED_pin, OUTPUT);   // Set LED pin as OUTPUT 
 } 
