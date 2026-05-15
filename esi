@@ -12,7 +12,7 @@ MOV A, #45H        ; Low byte 1
 ADD A, #0ECH      ; Add low byte 2 
 MOV R0, A          ; Store low byte result 
 MOV A, #02H        ; High byte 1 
-ADDC A, #0FCH    ; Add high byte 2 WITH carry 
+ADD A, #0FCH    ; Add high byte 2 WITH carry 
 MOV R1, A          ; Store high byte result 
 
 ex 2a Program to add first 10 natural number: 
